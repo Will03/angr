@@ -98,7 +98,7 @@ class SimEngineConcrete(SuccessorsMixin):
         # Set breakpoint on remote target
         for stop_point in extra_stop_points:
             l.debug("Setting breakpoints at %#x", stop_point)
-            self.target.set_breakpoint(stop_point, hardware=True, temporary=True)
+            self.target.set_breakpoint(stop_point, hardware=False, temporary=True)
 
         if timeout > 0:
             l.debug("Found timeout as option, setting it up!")
