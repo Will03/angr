@@ -278,6 +278,7 @@ class SimulationManager:
         for _ in (itertools.count() if n is None else range(0, n)):
             if not self.complete() and self._stashes[stash]:
                 self.step(stash=stash, **kwargs)
+                print('step')
                 if not (until and until(self)):
                     continue
             break
